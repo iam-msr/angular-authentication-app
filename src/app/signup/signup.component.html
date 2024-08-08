@@ -1,0 +1,42 @@
+<!-- src/app/signup/signup.component.html -->
+<div>
+    <h2 *ngIf="step === 1">Sign Up - Step 1</h2>
+    <h2 *ngIf="step === 2">Sign Up - Step 2</h2>
+  
+    <div *ngIf="step === 1">
+      <label for="emailOrPhone">Email or Phone:</label>
+      <input id="emailOrPhone" [(ngModel)]="user.emailOrPhone" type="text">
+      <label for="name">Name:</label>
+      <input id="name" [(ngModel)]="user.name" type="text">
+      <label for="password">Password:</label>
+      <input id="password" [(ngModel)]="user.password" type="password">
+      <button (click)="nextStep()">Continue</button>
+    </div>
+  
+    <div *ngIf="step === 2">
+      <label for="organization">Organization:</label>
+      <input id="organization" [(ngModel)]="user.organization" type="text">
+      <span *ngIf="message === 'Unknown organization-id'" style="color:red">{{ message }}</span>
+  
+      <label for="designation">Designation:</label>
+      <select id="designation" [(ngModel)]="user.designation">
+        <option *ngFor="let designation of designations" [value]="designation">{{ designation }}</option>
+      </select>
+  
+      <label for="birthDate">Birth Date:</label>
+      <input id="birthDate" [(ngModel)]="user.birthDate" type="date">
+  
+      <label for="city">City:</label>
+      <input id="city" [(ngModel)]="user.city" type="text">
+  
+      <label for="pincode">Pincode:</label>
+      <input id="pincode" [(ngModel)]="user.pincode" (ngModelChange)="validatePincode()" type="text" maxlength="6" pattern="\d*">
+      <span *ngIf="!isPincodeValid && user.pincode.length > 0" style="color:red">Invalid pincode</span>
+  
+      <button (click)="back()">Back</button>
+      <button (click)="nextStep()">Continue</button>
+    </div>
+  
+    <p>{{ message }}</p>
+  </div>
+  

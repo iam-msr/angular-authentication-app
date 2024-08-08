@@ -1,0 +1,11 @@
+<!-- src/app/login/login.component.html -->
+<div>
+    <h2>Login</h2>
+    <label for="emailOrPhone">Email or Phone:</label>
+    <input id="emailOrPhone" [(ngModel)]="emailOrPhone" type="text">
+    <label for="password">Password:</label>
+    <input id="password" [(ngModel)]="password" type="password">
+    <button (click)="login()">Login</button>
+    <p>{{ message }}</p>
+  </div>
+  
