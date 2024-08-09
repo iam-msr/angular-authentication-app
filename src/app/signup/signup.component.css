@@ -1,0 +1,143 @@
+/* signup.component.css */
+
+/* Welcome container styles */
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 500px; /* Maximum width for better alignment */
+  height: auto;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+/* Heading styles */
+.welcome-container h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #2D2D36;
+  margin: 0;
+}
+
+/* Label styles */
+.welcome-container label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #0069D1;
+  margin-bottom: 4px;
+}
+
+/* Input field and select styles */
+.welcome-container input, 
+.welcome-container select {
+  width: 100%; /* Full width of the container */
+  height: auto;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #E4ECEE;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+
+/* Button styles */
+button {
+  width: 100%; /* Full width of the container */
+  height: auto;
+  background-color: #0069D1;
+  color: #F5F5F5;
+  border: none;
+  border-radius: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 10px 0;
+  text-align: center;
+}
+button:hover {
+  background-color: #0056a0;
+}
+
+/* Spacer */
+.spacer {
+  padding-bottom: 2px;
+}
+
+/* Step 2 specific styles */
+.step2-heading {
+  margin-bottom: 20px;
+}
+
+/* Inline fields container */
+.inline-fields {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+/* Small input field styles */
+.small-input {
+  width: 48%; /* Adjust width for inline layout */
+}
+
+/* Back button styles */
+.back-button {
+  width: auto;
+  background-color: white; /* Button background color set to white */
+  color: #0069D1; /* Text color set to the desired blue */
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: Lato, sans-serif; /* Use Lato font with a fallback */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline if used with <a> tag */
+  display: inline-block; /* Ensure it behaves like a block-level element while maintaining inline flow */
+}
+
+.back-button:hover {
+  background-color: #e6f0ff; /* Light blue background on hover */
+  color: #0056b3; /* Darker blue text on hover */
+}
+
+
+/* Footer for Step 2 to align Continue button */
+.step2-footer {
+  display: flex;
+  justify-content: center; /* Center align the Continue button */
+  width: 100%;
+  margin-top: 20px; /* Space above the button */
+}
+.continue-button {
+  width: 100%; /* Full width of its container */
+  max-width: 400px; /* Limit the maximum width of the button */
+  padding: 10px 0; /* Ensure the button has enough padding */
+}
+/* Error message styles */
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+.error-input{
+  border: 1px solid red;
+}
+.line-container {
+  display: flex; /* Align children horizontally */
+  gap: 20px; /* Adjust the gap between the lines as needed */
+  padding: 20px;
+}
+
+.horizontal-line {
+  width: 165px;
+  height: 8px;
+  border-radius: 215px;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}

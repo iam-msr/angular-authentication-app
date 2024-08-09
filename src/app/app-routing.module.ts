@@ -1,13 +1,18 @@
 // src/app/app-routing.module.ts
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-
+import { SuccessComponent } from './success/success.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 const routes: Routes = [
+  { path: '', component: WelcomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' }
+  { path: 'success', component: SuccessComponent },
+  { path: 'dashboard', component: DashboardComponent }
+
 ];
 
 @NgModule({

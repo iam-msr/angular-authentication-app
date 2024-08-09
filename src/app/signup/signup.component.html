@@ -1,42 +1,89 @@
-<!-- src/app/signup/signup.component.html -->
-<div>
-    <h2 *ngIf="step === 1">Sign Up - Step 1</h2>
-    <h2 *ngIf="step === 2">Sign Up - Step 2</h2>
-  
-    <div *ngIf="step === 1">
-      <label for="emailOrPhone">Email or Phone:</label>
-      <input id="emailOrPhone" [(ngModel)]="user.emailOrPhone" type="text">
-      <label for="name">Name:</label>
-      <input id="name" [(ngModel)]="user.name" type="text">
-      <label for="password">Password:</label>
-      <input id="password" [(ngModel)]="user.password" type="password">
-      <button (click)="nextStep()">Continue</button>
+<div class="welcome-container">
+  <div *ngIf="step === 1">
+    <!-- Step 1 Fields -->
+    <div class="spacer">
+      <h2>Create Account</h2>
+    </div>
+
+    <div class="line-container">
+      <p class="horizontal-line" style="background-color: #0069D1;"></p>
+      <p class="horizontal-line" style="background-color: #CFD0D4;"></p>
     </div>
   
-    <div *ngIf="step === 2">
-      <label for="organization">Organization:</label>
-      <input id="organization" [(ngModel)]="user.organization" type="text">
-      <span *ngIf="message === 'Unknown organization-id'" style="color:red">{{ message }}</span>
-  
-      <label for="designation">Designation:</label>
-      <select id="designation" [(ngModel)]="user.designation">
+    <label for="email">Enter Email ID</label>
+    <span *ngIf="!user.email && submitted" class="error-message"> *Email is required</span>
+    <input id="email" [(ngModel)]="user.email" [ngClass]="{'error-input': !user.email && submitted}" type="text" placeholder="Loremipsum@gmail.com" required>
+    
+
+    <label for="name">Enter Full Name</label>
+    <span *ngIf="!user.name && submitted" class="error-message"> *Name is required</span>
+    <input id="name" [(ngModel)]="user.name" [ngClass]="{'error-input': !user.name && submitted}" type="text" placeholder="Full name" required>
+    
+
+    <label for="password">Create Password</label>
+    <span *ngIf="!user.password && submitted" class="error-message"> *Password is required</span>
+    <input id="password" [(ngModel)]="user.password" [ngClass]="{'error-input': !user.password && submitted}" type="password" placeholder="password" required>
+    
+
+    <label for="phone">Enter Phone Number</label>
+    <span *ngIf="!user.phone && submitted" class="error-message"> *Phone number is required</span>
+    <input id="phone" [(ngModel)]="user.phone" [ngClass]="{'error-input': !user.phone && submitted}" type="text" placeholder="Phone number" required>
+    
+
+    <button (click)="nextStep()">Next</button>
+  </div>
+
+  <div *ngIf="step === 2">
+    <!-- Step 2 Fields -->
+    <div class="step2-content">
+      <button (click)="back()" class="back-button">↩ Go Back</button>
+      
+      <div class="step2-heading">
+        <h2>Create Account</h2>
+      </div>
+
+      <div class="line-container">
+        <p class="horizontal-line" style="background-color: #0069D1;"></p>
+        <p class="horizontal-line" style="background-color: #0069D1;"></p>
+      </div>
+
+      <label for="organization">Organization Name</label>
+      <span *ngIf="!user.organization && submitted" class="error-message">*Organization Name is required</span>
+      <input id="organization" [(ngModel)]="user.organization" [ngClass]="{'error-input': !user.organization && submitted || message === 'Unknown organization-id'}" type="text" placeholder="Organization Name">
+
+      <label for="organizationId">Organization ID</label>
+      <span *ngIf="!user.organizationId && submitted" class="error-message">*Organization ID is required</span>
+      <span *ngIf="inValidOrgId && submitted" class="error-message">*Unknown organization-id</span>
+      <input id="organizationId" [(ngModel)]="user.organizationId" [ngClass]="{'error-input': !user.organizationId && submitted || inValidOrgId && submitted}" type="text" placeholder="Organization ID">
+
+      <label for="designation">Designation</label>
+      <span *ngIf="!user.designation && submitted" class="error-message">*Designation is required</span>
+      <select id="designation" [(ngModel)]="user.designation" [ngClass]="{'error-input': !user.designation && submitted}">
+        <option value="" disabled>Select a designation</option>
         <option *ngFor="let designation of designations" [value]="designation">{{ designation }}</option>
       </select>
-  
-      <label for="birthDate">Birth Date:</label>
+
+      <label for="birthDate">Birth Date</label>
       <input id="birthDate" [(ngModel)]="user.birthDate" type="date">
-  
-      <label for="city">City:</label>
-      <input id="city" [(ngModel)]="user.city" type="text">
-  
-      <label for="pincode">Pincode:</label>
-      <input id="pincode" [(ngModel)]="user.pincode" (ngModelChange)="validatePincode()" type="text" maxlength="6" pattern="\d*">
-      <span *ngIf="!isPincodeValid && user.pincode.length > 0" style="color:red">Invalid pincode</span>
-  
-      <button (click)="back()">Back</button>
-      <button (click)="nextStep()">Continue</button>
+
+      <div class="inline-fields">
+        <div>
+          <label for="city">City</label>
+          <input id="city" [(ngModel)]="user.city" type="text" class="small-input">
+        </div>
+        <div>
+          <label for="pincode">Pincode</label>
+          <span *ngIf="!user.pincode && submitted" class="error-message"> *Pincode is required</span>
+          <span *ngIf="!isPincodeValid && user.pincode.length > 0" class="error-message">*Invalid pincode</span>
+          <input id="pincode" [(ngModel)]="user.pincode" (ngModelChange)="validatePincode()" type="text" class="small-input" maxlength="6" pattern="\d*">
+        </div>
+      </div>
     </div>
-  
-    <p>{{ message }}</p>
+
+    <div class="step2-footer">
+      <button (click)="nextStep()" class="continue-button">Next</button>
+    </div>
   </div>
-  
+
+  <p>{{ message }}</p>
+</div>

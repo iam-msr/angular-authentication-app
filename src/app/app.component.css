@@ -1,9 +1,0 @@
-/* src/app/app.component.css */
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-  }
-  nav a.active {
-    font-weight: bold;
-  }
-  

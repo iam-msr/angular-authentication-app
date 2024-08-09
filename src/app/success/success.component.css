@@ -1,0 +1,53 @@
+/* src/app/dashboard/dashboard.component.css */
+
+.success-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  height: 100%; /* Full height of the right section */
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative; /* Position relative for absolute positioning of elements inside */
+  top: 25%; /* Adjusted top position to match the design */
+}
+
+.round-image-container {
+  width: 204px;
+  height: 204px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px; /* Space between image and text */
+}
+
+.round-image-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* Make the image round */
+  object-fit: cover; /* Ensure the image covers the container properly */
+}
+
+.welcome-text {
+  width: 257px;
+  font-family: Lato, sans-serif;
+  font-size: 28px; /* Adjusted font size to match the design */
+  font-weight: 700;
+  line-height: 33.6px;
+  text-align: center; /* Center text horizontally */
+  color: #282C3F; /* Text color */
+  margin-bottom: 20px; /* Space between welcome text and redirecting text */
+}
+
+.redirecting-text {
+  width: 493px; /* Adjust width to match the design */
+  font-family: Lato, sans-serif;
+  font-size: 20px; /* Adjusted font size to match the design */
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center; /* Center text horizontally */
+  color: #737E8A; /* Text color */
+}
+.redirecting-text .countdown {
+  font-weight: bold; /* Make countdown bold */
+}

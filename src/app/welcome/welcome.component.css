@@ -1,0 +1,78 @@
+/* src/app/welcome/welcome.component.css */
+
+/* Welcome container styles */
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 444px; /* Width from Figma design */
+    height: 333px; /* Height from Figma design */
+    padding: 24px; /* Gap between elements */
+    background-color: #ffffff; /* Background color for the welcome container */
+    border-radius: 8px; /* Optional: Rounded corners */
+    position: relative;
+    top: 111px; /* Positioning from Figma design */
+  }
+  
+  /* Heading styles */
+  .welcome-container h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #2D2D36;
+    margin: 0;
+  }
+  
+  /* Label styles */
+  .welcome-container label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: #0069D1; /* Color as per Figma design */
+    margin-bottom: 4px;
+  }
+  
+  /* Input field styles */
+  .welcome-container input {
+    width: 100%; /* Make the input field take full width of container */
+    height: 44px; /* Height of input field */
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #E4ECEE; /* Border color */
+    box-sizing: border-box;
+    margin-bottom: 16px; /* Spacing between input fields */
+  }
+  
+  /* Divider styles */
+  .divider {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: #767676;
+    text-align: center;
+    width: 100%;
+    margin: 16px 0; /* Spacing around the divider text */
+  }
+  
+  /* Button styles */
+  button {
+    width: 100%; /* Full width of container */
+    height: 38px; /* Height of the button */
+    background-color: #0069D1;
+    color: #F5F5F5;
+    border: none;
+    border-radius: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 10px 0;
+    text-align: center;
+  }
+  button:hover {
+    background-color: #0056a0; /* Darker shade for hover effect */
+}
+  .spacer {
+    padding-bottom: 10px;
+  }

@@ -1,1 +1,24 @@
-<p>welcome works!</p>
+<!-- src/app/welcome/welcome.component.html -->
+<div class="welcome-container">
+  <div class="spacer">
+    <h2>Welcome</h2>
+  </div>
+  <label for="email">Enter Email ID:</label>
+  <input id="email" [(ngModel)]="email" type="text" placeholder="Enter your email">
+  <div class="divider">(OR)</div>
+  <label for="mobileNo">Enter Mobile No.:</label>
+  <input id="mobileNo" [(ngModel)]="mobileNo" type="text" placeholder="91+">
+  <button (click)="next()">Next</button>
+</div>
+
+
+
+
+
+
+<!-- <div>
+  <h2>Welcome</h2>
+  <label for="emailOrPhone">Email or Phone:</label>
+  <input id="emailOrPhone" [(ngModel)]="emailOrPhone" type="text">
+  <button (click)="next()">Next</button>
+</div> -->

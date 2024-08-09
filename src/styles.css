@@ -1,1 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global body styles */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+  background-color: #f8f8f8; /* Background color for the entire screen */
+}
+
+/* Container styles */
+.container1 {
+  display: flex;
+  width: 1051px; /* Width as per Figma design */
+  height: auto; /* Allow height to adjust based on content */
+  max-height: 100vh; /* Prevent container from growing too large */
+  background-color: #ffffff; /* Background color for the container */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Shadow for visual clarity */
+}
+
+/* Left section */
+.left {
+  flex: 0 0 442px; /* Width as per Figma design */
+  height: 100%; /* Full height of the container */
+  overflow: hidden; /* Hide overflow if needed */
+  height: auto; /* Allow height to adjust based on content */
+}
+
+.left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the div properly */
+}
+
+/* Right section */
+.right {
+  flex: 1; /* Takes up the remaining space in the container */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  padding: 20px; /* Add some padding */
+  box-sizing: border-box; /* Include padding in the width/height calculations */
+}
+input {
+  background-color: #E4ECEE; /* Light background color */
+  border-radius: 16px 0 0 0; /* Rounded corners with only the top-left rounded */
+  width: 333px;               /* Fixed width */
+  height: 44px;              /* Fixed height */
+  padding: 10px 96px 10px 16px; /* Padding: top-right-bottom-left */
+  border: none;              /* Remove default border if needed */
+  opacity: 0px;                /* Set opacity to 0 (fully transparent) */
+  box-sizing: border-box;    /* Include padding and border in the element's total width and height */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1051px) {
+  .container1 {
+    width: 90vw; /* Scale container width to fit smaller screens */
+    height: auto; /* Adjust height based on content */
+  }
+
+  .left, .right {
+    width: 100%; /* Full width for stacking */
+    height: auto; /* Adjust height based on content */
+  }
+
+  .right {
+    margin-top: 10px; /* Optional: Space between stacked sections */
+    padding: 10px; /* Optional: Add some padding */
+  }
+}
