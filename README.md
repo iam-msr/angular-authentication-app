@@ -1,27 +1,81 @@
-# MyApp
+# Angular User Authentication Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.7.
+This is a single-page application (SPA) built with Angular that provides a user authentication flow. The application allows users to enter an email or phone number, checks if the user exists, and either directs them to a login page or a signup page. After successful authentication, a welcome message is displayed.
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-## Code scaffolding
+## Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Make sure you have the following software installed on your machine:
 
-## Build
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/) (Node Package Manager)
+- [Angular CLI](https://angular.io/cli)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installing
 
-## Running unit tests
+1. Clone the repository:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   ```bash
+   git clone https://github.com/your-username/angular-authentication-app.git
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Navigate to the project directory:
 
-## Further help
+   ```bash
+   cd angular-authentication-app
+   ```
+3. To install Angular CLI (if not already installed), run:
+  ```bash
+  npm install -g @angular/cli
+  ```
+4. Install the dependencies:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+   ```bash
+   npm install
+   ```
+
+## Running the Application
+
+1. Run the application:
+
+   ```bash
+   ng serve
+   ```
+2. Open your browser and navigate to `http://localhost:4200/`.
+
+
+## Using the Application
+
+1. Welcome Screen: Enter an email or phone number and click "Next".
+- If the user exists, they are directed to the login page.
+- If the user does not exist, they are directed to the signup page.
+2. Login Page: Enter the email and password to log in. Upon successful login, a welcome message is displayed.
+Signup Page: If the user is new, they can sign up by providing their name, email or phone number, password, and additional details. After successful signup, they are directed to the login page.
+
+## Error Handling
+
+- Error messages are logged to the console as well as displayed on screen for different scenarios:
+  - Invalid Pincode: An inline error is displayed if the pincode is not a valid 6-digit number.
+  - Unknown Organization: If the organization name entered during signup does not match any organization in the mock data, an inline error message "Unknown organization-id" is displayed.
+  - 
+
+## Caching
+
+- Session Data: Data entered during the signup process is stored in the session, allowing the user to go back and forth between steps without losing information.
+
+## Running the Tests
+
+To run the tests, run the following command
+
+```bash
+ng test
+```
+This command will open a browser window and run all the tests in your project. The results will be displayed in the terminal as well as in the browser.
+
+
+## Assets
+
+- Static images are stored in the public/images/ directory. Ensure the paths are correctly configured in the img tags within your components.
