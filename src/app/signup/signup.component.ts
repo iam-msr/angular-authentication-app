@@ -65,6 +65,7 @@ export class SignupComponent {
         this.userService.signup(this.user).subscribe(() => {
           this.inValidOrgId = false;
         });
+        console.log(this.user);
         this.router.navigate(['/success']);
       } else {
         this.inValidOrgId = true;

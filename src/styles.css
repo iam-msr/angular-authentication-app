@@ -30,7 +30,6 @@ body {
 .left img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the image covers the div properly */
 }
 
 /* Right section */
@@ -41,6 +40,7 @@ body {
   align-items: center; /* Center content horizontally */
   padding: 20px; /* Add some padding */
   box-sizing: border-box; /* Include padding in the width/height calculations */
+  overflow-y: auto;
 }
 input {
   background-color: #E4ECEE; /* Light background color */

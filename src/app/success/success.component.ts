@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./success.component.css']
 })
 export class SuccessComponent implements OnInit {
-  countdown: number = 10; // Countdown starting at 3 seconds
+  countdown: number = 7; // Countdown starting at 7 seconds
 
   constructor(private router: Router) { }
 
