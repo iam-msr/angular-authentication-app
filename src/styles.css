@@ -12,20 +12,21 @@ body {
 /* Container styles */
 .container1 {
   display: flex;
-  width: 1051px; /* Width as per Figma design */
+  max-width: 90vw; /* Adjusts based on viewport width */
   height: auto; /* Allow height to adjust based on content */
   max-height: 100vh; /* Prevent container from growing too large */
   background-color: #ffffff; /* Background color for the container */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Shadow for visual clarity */
 }
 
+
 /* Left section */
 .left {
-  flex: 0 0 442px; /* Width as per Figma design */
+  flex: 0 1 442px; /* Flex-grow and flex-shrink with a base width */
   height: 100%; /* Full height of the container */
   overflow: hidden; /* Hide overflow if needed */
-  height: auto; /* Allow height to adjust based on content */
 }
+
 
 .left img {
   width: 100%;
@@ -45,7 +46,7 @@ body {
 input {
   background-color: #E4ECEE; /* Light background color */
   border-radius: 16px 0 0 0; /* Rounded corners with only the top-left rounded */
-  width: 333px;               /* Fixed width */
+  width: 100%;               /* Fixed width */
   height: 44px;              /* Fixed height */
   padding: 10px 96px 10px 16px; /* Padding: top-right-bottom-left */
   border: none;              /* Remove default border if needed */

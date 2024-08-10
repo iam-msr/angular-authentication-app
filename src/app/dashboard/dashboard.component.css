@@ -48,4 +48,20 @@
     text-align: center; /* Center text horizontally */
     color: #737E8A; /* Text color */
   }
-  
+  /* src/app/success/success.component.css */
+
+.logout-button {
+  background-color: #ff4d4d; /* Example color */
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px; /* Space from other elements */
+  outline: none;
+}
+
+.logout-button:hover {
+  background-color: #e60000; /* Darker shade on hover */
+}
