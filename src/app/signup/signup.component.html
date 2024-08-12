@@ -25,11 +25,6 @@
     <input id="password" [(ngModel)]="user.password" [ngClass]="{'error-input': !user.password && submitted}" type="password" placeholder="password" required>
     
 
-    <label for="phone">Enter Phone Number</label>
-    <span *ngIf="!user.phone && submitted" class="error-message"> *Phone number is required</span>
-    <input id="phone" [(ngModel)]="user.phone" [ngClass]="{'error-input': !user.phone && submitted}" type="text" placeholder="Phone number" required>
-    
-
     <button (click)="nextStep()">Next</button>
   </div>
 
@@ -71,12 +66,15 @@
           <label for="city">City</label>
           <input id="city" [(ngModel)]="user.city" type="text" class="small-input">
         </div>
-        <div>
+        <div class="pincode-container">
           <label for="pincode">Pincode</label>
-          <span *ngIf="!user.pincode && submitted" class="error-message"> *Pincode is required</span>
-          <span *ngIf="!isPincodeValid && user.pincode.length > 0" class="error-message">*Invalid pincode</span>
+          <div class="error-messages">
+            <span *ngIf="!user.pincode && submitted" class="error-message">*required</span>
+            <span *ngIf="!isPincodeValid && user.pincode.length > 0" class="error-message">*Invalid pincode</span>
+          </div>
           <input id="pincode" [(ngModel)]="user.pincode" (ngModelChange)="validatePincode()" type="text" class="small-input" maxlength="6" pattern="\d*">
         </div>
+        
       </div>
     </div>
 

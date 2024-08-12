@@ -9,7 +9,10 @@ body {
   background-color: #f8f8f8; /* Background color for the entire screen */
   font-family: Arial, sans-serif; /* Add a global font */
 }
-
+input{
+  background-color: #E4ECEE;
+  border-radius: 16px;
+}
 /* Container styles */
 .container1 {
   display: flex;
@@ -108,6 +111,7 @@ body {
     flex-direction: column; /* Stack left and right sections */
     width: 100vw; /* Full width of viewport */
     height: auto; /* Adjust height based on content */
+    padding: 10px;
   }
 
   .left, .right {
@@ -116,7 +120,10 @@ body {
   }
 
   .right {
-    padding: 15px; /* Adjust padding for smaller screens */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+  .left img {
+    padding: 5px;
   }
 
   .welcome-container {
@@ -149,5 +156,11 @@ body {
 
   .welcome-container input, .welcome-container button {
     font-size: 12px; /* Further adjust font size for very small screens */
+  }
+}
+
+@media (min-width: 1200px) {
+  .mainwin{
+    transform: scale(0.75);
   }
 }

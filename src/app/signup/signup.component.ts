@@ -1,18 +1,17 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent {
+export class SignupComponent implements OnInit {
   step: number = 1;
   user: any = {
     email: '',
     name: '',
     password: '',
-    phone: '',
     organization: '',
     organizationId: '',
     designation: '',
@@ -27,20 +26,26 @@ export class SignupComponent {
   isPincodeValid: boolean = true;
   submitted: boolean = false;
 
-  constructor(private router: Router,private userService: UserService) { }
+  constructor(private route: ActivatedRoute, private router: Router,private userService: UserService) { }
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.user.email = params['email'];
+    });
+  }
 
   nextStep() {
     this.submitted = true;
      
     if (this.step === 1) {
-      if(!this.isValidEmail(this.user.email) || !this.isValidMobileNo(this.user.phone))
+      if(!this.isValidEmail(this.user.email))
         {
-          alert("Invalid Email or Phone Number");
+          alert("Invalid Email");
           return;
         }
 
       // Validate required fields for step 1
-      if (!this.user.email || !this.user.name || !this.user.password || !this.user.phone) {
+      if (!this.user.email || !this.user.name || !this.user.password) {
         return; // Do not proceed if required fields are missing
       }
 
@@ -91,9 +96,5 @@ export class SignupComponent {
     return emailRegex.test(email);
   }
 
-  isValidMobileNo(mobileNo: string): boolean {
-    // Basic mobile number validation: checks if it's a number and has 10 digits
-    const mobileNoRegex = /^\d{10}$/;
-    return mobileNoRegex.test(mobileNo);
-  }
+  
 }

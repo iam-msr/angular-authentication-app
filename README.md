@@ -60,21 +60,29 @@ mock data:
 ...
 ```
 
-It is recommended to zoom out your browser for better view of the application.(80% zoom is recommended whatever is comfortable for you)
-
-1. Welcome Screen: Enter an email or phone number and click "Next".
+**Welcome Screen**: Enter an email or phone number and click "Next".
 - If the user exists, they are directed to the login page.(Refer to the existing user credentials in the mock data)
 - One should enter either email or phone number to proceed further, If both are entered it will consider email as the input.
 - If the user does not exist, they are directed to the signup page.
-2. Signup Page: If the user is new, they can sign up by providing their name, email or phone number, password, and additional details. 
+- You can only use phone number of mock data for login purpose in the welcome screen.You can not signup with phone number from welcome screen (implemented as per the design).
+
+**Signup Page**: If the user is new, they can sign up by providing their name, email, password, and additional details. 
 - For the signup page, the organization name is a required field. If the organization name entered does not match any organization in the mock data, an error message is displayed. It expects to match the organization name with the organization ID that is provided in the mock data.
 - Few fields are mandatory to fill in the signup page.
-- Email, phone number and pincode fields are validated for the correct format.
+- Email and pincode fields are validated for the correct format.
 - The user can navigate back and forth between the signup steps without losing information.
-3. After a successful signup, the user will be shown a success message and will be redirected to the login page.
-4. For every successful signup, the credentials are stored in the mock data and can be used for login only for the current session.(It is not recommended to refresh the page at any point of time, you will be navigated to different page as per the flow) 
-5. Login Page: The user can log in using their email and password (Refer to the existing user credentials in the mock data). If the user enters the wrong credentials, an error message is displayed else the user is redirected to dashboard page.
-6. Dashboard Page: Upon successful login, the user is redirected to the dashboard page with a button to log out. The user can log out and will be redirected to the welcome screen.
+- After a successful signup, the user will be shown a success message and will be redirected to the login page.
+- For every successful signup, the credentials are stored in the mock data and can also be used for login only for the current session.
+ **Login Page**: The user can log in using their email and password (Refer to the existing user credentials in the mock data). 
+ - If the user enters the wrong credentials, an error message is displayed else the user is redirected to dashboard page.
+
+**Dashboard Page** Upon successful login, the user is redirected to the dashboard page with a button to log out. The user can log out and will be redirected to the welcome screen.
+
+**Note:** 
+- Additionally, the application uses Angular in-memory-web-api to simulate a data server. The in-memory-data.service.ts file contains the mock data for user authentication and organization details.
+- And, refreshing the page during the authentication process is not recommended, as it can lead to the loss of session data. To ensure that your session data is preserved and you can navigate smoothly between steps, use the provided buttons instead of refreshing the page or going back manually. This way, you can move back and forth through the authentication steps without losing any information.
+- If you signed up successfully, you will be redirected to the login page. You can use the same credentials to login in the same session.
+- The application is designed to be responsive and can be viewed on different screen sizes.
 
 ## Error Handling
 
