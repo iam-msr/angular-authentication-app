@@ -1,5 +1,4 @@
-/* src/app/dashboard/dashboard.component.css */
-
+/* Global styles for the success container */
 .success-container {
   display: flex;
   flex-direction: column;
@@ -9,9 +8,9 @@
   padding: 20px;
   box-sizing: border-box;
   position: relative; /* Position relative for absolute positioning of elements inside */
-  top: auto; /* Adjusted top position to match the design */
 }
 
+/* Styles for the round image container */
 .round-image-container {
   width: 204px;
   height: 204px;
@@ -28,6 +27,7 @@
   object-fit: cover; /* Ensure the image covers the container properly */
 }
 
+/* Styles for the welcome text */
 .welcome-text {
   width: 257px;
   font-family: Lato, sans-serif;
@@ -39,6 +39,7 @@
   margin-bottom: 20px; /* Space between welcome text and redirecting text */
 }
 
+/* Styles for the redirecting text */
 .redirecting-text {
   width: 493px; /* Adjust width to match the design */
   font-family: Lato, sans-serif;
@@ -47,7 +48,48 @@
   line-height: 24px;
   text-align: center; /* Center text horizontally */
   color: #737E8A; /* Text color */
+  margin-top: 10px;
 }
-.redirecting-text .countdown {
-  font-weight: bold; /* Make countdown bold */
+
+/* Styles for the logout button */
+.logout-button {
+  background-color: #ff4d4d; /* Example color */
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px; /* Space from other elements */
+  outline: none;
+}
+
+.logout-button:hover {
+  background-color: #e60000; /* Darker shade on hover */
+}
+
+/* Responsive adjustments for screens 768px and below */
+@media (max-width: 768px) {
+  .round-image-container {
+      width: 150px; /* Reduce size on smaller screens */
+      height: 150px;
+  }
+
+  .welcome-text {
+      width: 80%; /* Make the text container responsive */
+      font-size: 24px; /* Adjust font size for smaller screens */
+      line-height: 28.8px;
+  }
+
+  .redirecting-text {
+      width: 90%; /* Make the text container responsive */
+      font-size: 18px; /* Adjust font size for smaller screens */
+      line-height: 22px;
+  }
+
+  .logout-button {
+      width: 100%; /* Make button full-width */
+      font-size: 14px; /* Adjust font size for smaller screens */
+      padding: 12px; /* Adjust padding */
+  }
 }

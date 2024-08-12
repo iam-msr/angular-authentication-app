@@ -76,3 +76,57 @@
   .spacer {
     padding-bottom: 10px;
   }
+  /* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .container1 {
+    flex-direction: column; /* Stack left and right sections */
+    width: 100vw; /* Full width of viewport */
+    height: auto; /* Adjust height based on content */
+  }
+
+  .left, .right {
+    width: 100%; /* Full width for stacking */
+    height: auto; /* Adjust height based on content */
+  }
+
+  .right {
+    padding: 15px; /* Adjust padding for smaller screens */
+    width: auto;
+  }
+
+  .welcome-container {
+    padding: 15px; /* Adjust padding for smaller screens */
+    width: auto;
+  }
+
+  .welcome-container h2 {
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
+
+  .welcome-container label {
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
+
+  .welcome-container input {
+    padding: 10px; /* Adjust padding for smaller screens */
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
+
+  .welcome-container button {
+    padding: 10px; /* Adjust padding for smaller screens */
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-container h2 {
+    font-size: 18px; /* Further adjust font size for very small screens */
+  }
+
+  .welcome-container input, .welcome-container button {
+    font-size: 12px; /* Further adjust font size for very small screens */
+  }
+  .welcome-container {
+    width: auto;
+  }
+}

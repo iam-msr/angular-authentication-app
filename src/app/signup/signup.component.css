@@ -142,3 +142,33 @@ button:hover {
   margin: 0; /* Remove default margin */
   padding: 0; /* Remove default padding */
 }
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .welcome-container {
+      padding: 16px;
+      box-shadow: none;
+  }
+
+  .welcome-container h2 {
+      font-size: 18px;
+      line-height: 28px;
+  }
+
+  .welcome-container label {
+      font-size: 14px;
+  }
+
+  button {
+      font-size: 14px;
+      height: 44px;
+  }
+
+  .inline-fields {
+      flex-direction: column;
+  }
+
+  .small-input {
+      width: 100%;
+      margin-bottom: 16px;
+  }
+}
