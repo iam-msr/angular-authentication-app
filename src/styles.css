@@ -3,61 +3,110 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  height: 100vh; /* Full viewport height */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
   background-color: #f8f8f8; /* Background color for the entire screen */
+  font-family: Arial, sans-serif; /* Add a global font */
 }
 
 /* Container styles */
 .container1 {
   display: flex;
-  max-width: 90vw; /* Adjusts based on viewport width */
-  height: auto; /* Allow height to adjust based on content */
-  max-height: 100vh; /* Prevent container from growing too large */
+  flex-direction: row;
+  width: 90vw; /* Adjusts based on viewport width */
+  max-width: 1200px; /* Limit maximum width */
   background-color: #ffffff; /* Background color for the container */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Shadow for visual clarity */
+  border-radius: 8px; /* Add rounded corners */
+  overflow: hidden; /* Prevent overflow */
 }
-
 
 /* Left section */
 .left {
-  flex: 0 1 442px; /* Flex-grow and flex-shrink with a base width */
-  height: 100%; /* Full height of the container */
+  flex: 1 1 40%; /* Flex-grow, flex-shrink, and base width */
+  height: auto; /* Allow height to adjust based on content */
   overflow: hidden; /* Hide overflow if needed */
 }
 
-
 .left img {
   width: 100%;
-  height: 100%;
+  height: -webkit-fill-available; /* Maintain aspect ratio */
+  object-fit: cover; /* Cover the area, maintaining aspect ratio */
 }
 
 /* Right section */
 .right {
-  flex: 1; /* Takes up the remaining space in the container */
+  flex: 1 1 60%; /* Flex-grow, flex-shrink, and base width */
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content horizontally */
+  justify-content: center;
   padding: 20px; /* Add some padding */
-  box-sizing: border-box; /* Include padding in the width/height calculations */
+  box-sizing: border-box; /* Include padding in width/height calculations */
   overflow-y: auto;
 }
-input {
-  background-color: #E4ECEE; /* Light background color */
-  border-radius: 16px 0 0 0; /* Rounded corners with only the top-left rounded */
-  width: 100%;               /* Fixed width */
-  height: 44px;              /* Fixed height */
-  padding: 10px 96px 10px 16px; /* Padding: top-right-bottom-left */
-  border: none;              /* Remove default border if needed */
-  opacity: 0px;                /* Set opacity to 0 (fully transparent) */
-  box-sizing: border-box;    /* Include padding and border in the element's total width and height */
+
+/* Welcome Component Styles */
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Full width of the parent container */
+  max-width: 500px; /* Optional: Limit max width */
+  margin: auto; /* Center horizontally */
+  padding: 20px; /* Add some padding */
+  box-sizing: border-box;
 }
 
-/* Media query for smaller screens */
-@media (max-width: 1051px) {
+.welcome-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px; /* Adjust font size for better visibility */
+}
+
+.welcome-container label {
+  width: 100%;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.welcome-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.welcome-container .divider {
+  margin: 20px 0;
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+}
+
+.welcome-container button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.welcome-container button:hover {
+  background-color: #45a049;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
   .container1 {
-    width: 90vw; /* Scale container width to fit smaller screens */
+    flex-direction: column; /* Stack left and right sections */
+    width: 100vw; /* Full width of viewport */
     height: auto; /* Adjust height based on content */
   }
 
@@ -67,7 +116,38 @@ input {
   }
 
   .right {
-    margin-top: 10px; /* Optional: Space between stacked sections */
-    padding: 10px; /* Optional: Add some padding */
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  .welcome-container {
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  .welcome-container h2 {
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
+
+  .welcome-container label {
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
+
+  .welcome-container input {
+    padding: 10px; /* Adjust padding for smaller screens */
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
+
+  .welcome-container button {
+    padding: 10px; /* Adjust padding for smaller screens */
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-container h2 {
+    font-size: 18px; /* Further adjust font size for very small screens */
+  }
+
+  .welcome-container input, .welcome-container button {
+    font-size: 12px; /* Further adjust font size for very small screens */
   }
 }

@@ -9,7 +9,7 @@
     padding: 20px;
     box-sizing: border-box;
     position: relative; /* Position relative for absolute positioning of elements inside */
-    top: 25%; /* Adjusted top position to match the design */
+    top: auto; /* Adjusted top position to match the design */
   }
   
   .round-image-container {

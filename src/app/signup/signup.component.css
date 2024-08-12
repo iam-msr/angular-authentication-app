@@ -11,7 +11,8 @@
   padding: 10px;
   background-color: #ffffff;
   border-radius: 8px;
-  margin: 0 auto; /* Center the container horizontally */
+  top: auto;
+  position: relative;
 }
 
 /* Heading styles */

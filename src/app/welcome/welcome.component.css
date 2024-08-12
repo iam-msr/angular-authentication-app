@@ -11,7 +11,7 @@
     background-color: #ffffff; /* Background color for the welcome container */
     border-radius: 8px; /* Optional: Rounded corners */
     position: relative;
-    top: 111px; /* Positioning from Figma design */
+    top: auto; /* Positioning from Figma design */
   }
   
   /* Heading styles */
